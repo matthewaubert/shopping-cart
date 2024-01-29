@@ -19,6 +19,15 @@
   transition: var(--transition);
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 body {
   height: 100vh;
 }
@@ -28,4 +37,8 @@ button {
   border: none;
   color: inherit;
   font-family: inherit;
+}
+
+h1 {
+  font-size: 1.8rem;
 }

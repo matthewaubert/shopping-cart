@@ -53,9 +53,12 @@ Notes and progress for my Shopping Cart app
      - CartPage
      - Footer
 
-1. Keep in mind to type check and test while creating components
+1. Keep in mind to test and type check while creating components
+   - [ ] Review material for test-driven development in React
+   - [ ] Review material for type checking with PropTypes in React
 
 1. Enable client-side routing
+   - [ ] Review material for React Router
 
 ### Website Research
 
