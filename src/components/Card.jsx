@@ -10,6 +10,7 @@ function Card({ data }) {
         {data.title}
       </h3>
       <div className="price">{formatPrice(data.price)}</div>
+      <Rating rating={data.rating} />
     </div>
   );
 }

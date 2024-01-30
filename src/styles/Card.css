@@ -1,0 +1,54 @@
+div.card {
+  border: 1px solid lightgray;
+  border-radius: 12px;
+  box-shadow: var(--shadow-2);
+  padding: 1rem 1.2rem;
+  word-break: break-word;
+  text-align: left;
+
+  display: grid;
+  grid-template-rows: repeat(3, min-content);
+  gap: 0.4rem;
+  align-items: start;
+}
+
+.card img {
+  width: 100%;
+  height: 18.5rem;
+  object-fit: contain;
+  margin-bottom: 0.6rem;
+}
+
+.card .title {
+  font-size: 1rem;
+  font-weight: 400;
+
+  /* clip text after 3 lines */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card .price {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+
+.card .rating {
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.card .stars {
+  display: flex;
+}
+
+.card .stars svg {
+  height: 1.4rem;
+  fill: darkorange;
+  margin: -1px;
+}
