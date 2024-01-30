@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import Rating from './Rating';
 import { formatPrice } from '../utils/util';
 import '../styles/Card.css';
@@ -14,5 +15,20 @@ function Card({ data }) {
     </div>
   );
 }
+
+Card.propTypes = {
+  data: PropTypes.shape({
+    category: PropTypes.string,
+    description: PropTypes.string,
+    id: PropTypes.number,
+    image: PropTypes.string,
+    price: PropTypes.number,
+    rating: PropTypes.shape({
+      count: PropTypes.number,
+      rate: PropTypes.number,
+    }),
+    title: PropTypes.string,
+  }),
+};
 
 export default Card;

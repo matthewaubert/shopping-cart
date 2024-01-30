@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import { roundHalf } from '../utils/util';
 
 function Rating({ rating }) {
@@ -13,6 +14,13 @@ function Rating({ rating }) {
     </div>
   );
 }
+
+Rating.propTypes = {
+  rating: PropTypes.shape({
+    count: PropTypes.number,
+    rate: PropTypes.number,
+  }),
+};
 
 function Stars({ rating, accessRating }) {
   const fullStar = (
@@ -47,5 +55,10 @@ function Stars({ rating, accessRating }) {
     </div>
   );
 }
+
+Stars.propTypes = {
+  rating: PropTypes.number,
+  accessRating: PropTypes.string,
+};
 
 export default Rating;
