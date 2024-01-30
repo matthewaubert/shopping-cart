@@ -54,11 +54,11 @@ Notes and progress for my Shopping Cart app
      - Footer
 
 1. Keep in mind to test and type check while creating components
-   - [ ] Review material for test-driven development in React
-   - [ ] Review material for type checking with PropTypes in React
+   - Review material for test-driven development in React
+   - Review material for type checking with PropTypes in React
 
 1. Enable client-side routing
-   - [ ] Review material for React Router
+   - Review material for React Router
 
 ### Website Research
 
@@ -114,5 +114,13 @@ Websites I liked:
   ```
   fetch('https://fakestoreapi.com/products/category/jewelery')
     .then(res => res.json())
-    .then(json => console.log(json)); 
+    .then(json => console.log(json));
   ```
+
+## 1/27/24
+
+Today I set up the router and got a few tests working for the `Navbar` component.
+
+## 1/29/24
+
+Today I need to start fetching data from the store API and problem solve how to organize my fetch requests. I should review the lesson on fetching data in React.
