@@ -1,0 +1,47 @@
+form.add-to-cart {
+  display: grid;
+  grid-template-columns: min-content auto;
+  gap: 0.6rem;
+}
+
+div.spinner {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  align-items: stretch;
+}
+
+.add-to-cart input[type=number] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: none;
+
+  border: 1px solid darkgray;
+  height: 100%;
+  padding: 0.2rem 0.4rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.card button {
+  padding: 0.6rem;
+  background-color: lightgray;
+  border-radius: 6px;
+  display: grid;
+}
+
+button.dec {
+  border-radius: 6px 0 0 6px;
+}
+
+button.inc {
+  border-radius: 0 6px 6px 0;
+}
+
+.add-to-cart svg {
+  width: 0.9rem;
+}

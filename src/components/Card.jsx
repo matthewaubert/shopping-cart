@@ -1,5 +1,6 @@
 import PropTypes from 'prop-types';
 import Rating from './Rating';
+import AddToCart from './AddToCart';
 import { formatPrice } from '../utils/util';
 import '../styles/Card.css';
 
@@ -12,6 +13,7 @@ function Card({ data }) {
       </h3>
       <div className="price">{formatPrice(data.price)}</div>
       <Rating rating={data.rating} />
+      <AddToCart data={data} />
     </div>
   );
 }
