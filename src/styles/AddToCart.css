@@ -1,5 +1,34 @@
-form.add-to-cart {
+.card button {
+  padding: 0.6rem;
+  background-color: lightgray;
+  border-radius: 6px;
+  display: grid;
+  place-content: center;
+}
+
+.atc-form {
+  width: 100%;
+}
+
+form.atc-form {
   display: grid;
   grid-template-columns: min-content auto;
   gap: 0.6rem;
+}
+
+.card .qty-display {
+  font-size: 0.8rem;
+  font-weight: 700;
+  display: flex;
+  gap: 0.3rem;
+}
+
+.card button.remove {
+  background: transparent;
+  color: blue;
+  font-size: inherit;
+  font-weight: inherit;
+  padding: 0;
+  display: grid;
+  place-content: center;
 }
