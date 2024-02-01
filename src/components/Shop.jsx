@@ -1,4 +1,5 @@
 import Card from './Card';
+import AddToCart from './AddToCart';
 import useFetch from '../utils/use-fetch';
 import '../styles/Shop.css';
 
@@ -18,7 +19,9 @@ function Shop() {
       {data && (
         <div className="products">
           {data.map((item) => (
-            <Card key={item.id} data={item} />
+            <Card key={item.id} data={item}>
+              <AddToCart data={item} />
+            </Card>
           ))}
         </div>
       )}
