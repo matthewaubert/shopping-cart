@@ -118,9 +118,20 @@ Websites I liked:
   ```
 
 ## 1/27/24
-
 Today I set up the router and got a few tests working for the `Navbar` component.
 
 ## 1/29/24
-
 Today I need to start fetching data from the store API and problem solve how to organize my fetch requests. I should review the lesson on fetching data in React.
+
+## 1/30/24
+Today I need to:
+- Look into using PropTypes (review TOP lesson)
+- continue testing components
+- Set up "add to cart" form on components
+- Set up cart state. Should I use "prop drilling", Context, or composition for this? Time to study the differences!
+
+## 1/31/24
+- I realized I need to write tests for my Spinner component...
+- I opted to use the `useOutletContext` Context API provided with React Router to set up cart state.
+  - I'll have to figure out how to mock this for testing purposes.
+  - I can then finally finish setting up cart state.

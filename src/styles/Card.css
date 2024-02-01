@@ -52,3 +52,10 @@ div.card {
   fill: darkorange;
   margin: -1px;
 }
+
+.card button {
+  padding: 0.6rem;
+  background-color: lightgray;
+  border-radius: 6px;
+  display: grid;
+}

@@ -1,0 +1,34 @@
+div.spinner {
+  display: grid;
+  grid-template-columns: repeat(3, min-content);
+  align-items: stretch;
+}
+
+.spinner input[type=number] {
+  -webkit-appearance: none;
+  -moz-appearance: textfield;
+  appearance: none;
+
+  border: 1px solid darkgray;
+  height: 100%;
+  padding: 0.2rem 0.4rem;
+}
+
+/* Chrome, Safari, Edge, Opera */
+.spinner input::-webkit-outer-spin-button,
+.spinner input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.spinner button.dec {
+  border-radius: 6px 0 0 6px;
+}
+
+.spinner button.inc {
+  border-radius: 0 6px 6px 0;
+}
+
+.spinner svg {
+  width: 0.9rem;
+}
