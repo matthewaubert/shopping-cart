@@ -37,7 +37,7 @@ function Spinner({ value, setValue, name = 'number', min = null, max = null }) {
         min={min}
         max={max}
         value={value}
-        onChange={(e) => setValue(clamp(e.target.value, min, max))}
+        onChange={(e) => setValue(clamp(Number(e.target.value), min, max))}
       />
       <button type="button" className="inc" onClick={increment}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">

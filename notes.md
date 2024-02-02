@@ -135,3 +135,9 @@ Today I need to:
 - I opted to use the `useOutletContext` Context API provided with React Router to set up cart state.
   - I'll have to figure out how to mock this for testing purposes.
   - I can then finally finish setting up cart state.
+
+## 2/1/24
+- I finally figured out how to mock `useOutletContext` and `useState` and finished writing tests for `AddToCart.jsx`.
+- I also fully enabled the functionality to add, remove, and adjust items in the cart 🤘
+- Next I need to show the current qty of items displayed on the cart icon in the nav.
+- After that, I can create the drop-down menu with the cart summary.

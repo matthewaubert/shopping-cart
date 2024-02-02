@@ -1,4 +1,35 @@
 /**
+ * calculate quantity of items in cart
+ * @param {array} cart - array of 'item' objects w/ quantities
+ * @returns {number} - sum of qty property of all 'item' objects
+ */
+export function calcQtyInCart(cart) {
+  return cart.reduce((total, item) => total + item.quantity, 0);
+}
+
+/**
+ * add, remove, change quantity of item in cart
+ * @param {object} item - object with unique id and quantity
+ * @param {array} cart - array of 'item' objects w/ unique ids
+ * @returns {array} - shallow copy of cart with item changed
+ */
+export function changeCartItem(item, cart) {
+  const itemIndex = findItemIndex(item.id, cart);
+  const newCart = [...cart];
+
+  // if item qty is 0 and item already in cart: remove from cart
+  if (item.quantity < 1 && itemIndex >= 0) newCart.splice(itemIndex, 1);
+  else {
+    // if item already in cart: replace qty with new qty; else: add new item
+    itemIndex >= 0
+      ? (newCart[itemIndex].quantity = item.quantity)
+      : newCart.push(item);
+  }
+
+  return newCart;
+}
+
+/**
  * restrict input num btw min and max
  * @param {number} num
  * @param {number} min
@@ -38,28 +69,6 @@ function findItemIndex(id, array) {
 export function findItemQty(id, array) {
   const found = findItem(id, array);
   return found ? found.quantity : 0;
-}
-
-/**
- * add, remove, change quantity of item in cart
- * @param {object} item - object with unique id and quantity
- * @param {array} cart - array of 'item' objects w/ unique ids
- * @returns {array} - shallow copy of cart with item changed
- */
-export function changeCartItem(item, cart) {
-  const itemIndex = findItemIndex(item.id, cart);
-  const newCart = [...cart];
-
-  // if item qty is 0 and item already in cart: remove from cart
-  if (item.quantity < 1 && itemIndex >= 0) newCart.splice(itemIndex, 1);
-  else {
-    // if item already in cart: replace qty with new qty; else: add new item
-    itemIndex >= 0
-      ? (newCart[itemIndex].quantity = item.quantity)
-      : newCart.push(item);
-  }
-
-  return newCart;
 }
 
 /**

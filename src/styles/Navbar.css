@@ -8,12 +8,3 @@ nav {
 nav a {
   align-self: baseline;
 }
-
-button.cart-btn {
-  background-color: transparent;
-  align-self: center;
-}
-
-.cart-btn svg {
-  width: 1.8rem;
-}

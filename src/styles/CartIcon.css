@@ -1,0 +1,25 @@
+button.cart-btn {
+  background-color: transparent;
+  align-self: center;
+  position: relative;
+  display: grid;
+  place-content: center;
+}
+
+.cart-btn svg {
+  width: 2.2rem;
+}
+
+.cart-btn > span {
+  background-color: #777;
+  border-radius: 16px;
+  color: white;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.3rem 0.4rem;
+  
+  position: absolute;
+  bottom: 4px;
+  right: 3px;
+  translate: 50% 50%;
+}

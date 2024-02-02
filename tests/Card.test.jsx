@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import Card from '../src/components/Card';
-import data from './example-data';
+import { data } from './example-data';
 import { formatPrice, roundHalf } from '../src/utils/util';
 
 it('has the correct image', () => {

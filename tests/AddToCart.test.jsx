@@ -2,7 +2,7 @@ import { vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import AddToCart from '../src/components/AddToCart';
-import data from './example-data';
+import { data } from './example-data';
 
 // mock useState
 let cart = [];
@@ -50,19 +50,19 @@ describe('Managing Cart', () => {
   it('successfully adds an item to the cart', async () => {
     const user = userEvent.setup();
     render(<AddToCart data={data} />);
-    expect(cart.length).toBe(0);
+    expect(cart.length).toEqual(0);
 
     await user.click(screen.getByRole('button', { name: /add to cart/i }));
-    expect(cart.length).toBe(0);
+    expect(cart.length).toEqual(0);
 
     await user.click(screen.getByRole('button', { name: /submit/i }));
-    expect(cart.length).toBe(1);
+    expect(cart.length).toEqual(1);
   });
 
   it('adds the correct information to the cart', async () => {
     const user = userEvent.setup();
     render(<AddToCart data={data} />);
-    expect(cart.length).toBe(0);
+    expect(cart.length).toEqual(0);
 
     await user.click(screen.getByRole('button', { name: /add to cart/i }));
     await user.click(screen.getByRole('button', { name: /submit/i }));
@@ -75,7 +75,7 @@ describe('Managing Cart', () => {
   it('changes qty on same item if submitted twice', async () => {
     const user = userEvent.setup();
     render(<AddToCart data={data} />);
-    expect(cart.length).toBe(0);
+    expect(cart.length).toEqual(0);
 
     async function addOneToCart() {
       await user.click(screen.getByRole('button', { name: /increment/i }));
@@ -99,29 +99,29 @@ describe('Managing Cart', () => {
   it('removes item when qty reduced to 0', async () => {
     const user = userEvent.setup();
     render(<AddToCart data={data} />);
-    expect(cart.length).toBe(0);
+    expect(cart.length).toEqual(0);
 
     await user.click(screen.getByRole('button', { name: /add to cart/i }));
     await user.click(screen.getByRole('button', { name: /submit/i }));
-    expect(cart.length).toBe(1);
+    expect(cart.length).toEqual(1);
 
     await user.click(screen.getByRole('button', { name: /decrement/i }));
     await user.click(screen.getByRole('button', { name: /submit/i }));
-    expect(cart.length).toBe(0);
+    expect(cart.length).toEqual(0);
   });
 
   it('removes item when "Remove" button is clicked', async () => {
     const user = userEvent.setup();
     const { rerender } = render(<AddToCart data={data} />);
-    expect(cart.length).toBe(0);
+    expect(cart.length).toEqual(0);
 
     await user.click(screen.getByRole('button', { name: /add to cart/i }));
     await user.click(screen.getByRole('button', { name: /submit/i }));
-    expect(cart.length).toBe(1);
+    expect(cart.length).toEqual(1);
 
     rerender(<AddToCart data={data} />);
     await user.click(screen.getByRole('button', { name: /remove/i }));
-    expect(cart.length).toBe(0);
+    expect(cart.length).toEqual(0);
   });
 });
 
