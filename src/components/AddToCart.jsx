@@ -38,7 +38,7 @@ function AddToCart({ data }) {
   return (
     <>
       {!hasBeenClicked ? (
-        <button className="atc-form" onClick={() => setHasBeenClicked(true)}>Add to Cart</button>
+        <button className="atc-form btn" onClick={() => setHasBeenClicked(true)}>Add to Cart</button>
       ) : (
         <form className="atc-form" onSubmit={onFormSubmit}>
           <Spinner
@@ -48,7 +48,7 @@ function AddToCart({ data }) {
             min={0}
             max={99}
           />
-          <button>Submit</button>
+          <button className="btn">Submit</button>
         </form>
       )}
       {qtyDisplay}

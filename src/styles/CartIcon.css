@@ -4,6 +4,7 @@ button.cart-btn {
   position: relative;
   display: grid;
   place-content: center;
+  z-index: 2;
 }
 
 .cart-btn svg {
@@ -22,4 +23,71 @@ button.cart-btn {
   bottom: 4px;
   right: 3px;
   translate: 50% 50%;
+}
+
+/* cart modal */
+
+div.modal-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+div.cart-modal {
+  background-color: white;
+  border: 1px solid lightgray;
+  border-radius: 12px;
+  box-shadow: var(--shadow-2);
+  padding: 0.75rem 0.9rem 0.75rem;
+  text-align: left;
+
+  position: absolute;
+  top: 43px;
+  right: 0;
+  z-index: 1;
+}
+
+.cart-modal table {
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+.cart-modal caption {
+  font-size: 1rem;
+  font-weight: 700;
+  text-align: inherit;
+  margin-bottom: 0.2rem;
+}
+
+.cart-modal tbody th {
+  font-weight: 400;
+
+  max-width: 18rem;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+
+.cart-modal tfoot > * {
+  font-weight: 700;
+}
+
+.cart-modal th,
+.cart-modal td {
+  padding: 0.35rem 0.7rem;
+}
+
+.cart-modal button.remove {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+button.checkout {
+  float: right;
+}
+
+button.checkout a {
+  text-decoration: none;
 }

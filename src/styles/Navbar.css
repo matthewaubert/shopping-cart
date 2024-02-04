@@ -1,5 +1,6 @@
 nav {
   margin-bottom: 2rem;
+  position: relative;
   display: flex;
   justify-content: space-between;
   align-items: baseline;

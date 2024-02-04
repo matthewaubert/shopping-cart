@@ -11,7 +11,7 @@ function App() {
   return (
     <>
       <Navbar>
-        <CartIcon cart={cart} />
+        <CartIcon cart={cart} setCart={setCart} />
       </Navbar>
       <Outlet context={[cart, setCart]} />
     </>

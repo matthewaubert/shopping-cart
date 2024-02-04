@@ -1,4 +1,13 @@
 /**
+ * calc total price of items in cart
+ * @param {array} cart - array of 'item' objects w/ prices
+ * @returns {number} - sum of price property of all 'item' objects
+ */
+export function calcCartTotal(cart) {
+  return cart.reduce((total, item) => total + item.quantity * item.price, 0);
+}
+
+/**
  * calculate quantity of items in cart
  * @param {array} cart - array of 'item' objects w/ quantities
  * @returns {number} - sum of qty property of all 'item' objects

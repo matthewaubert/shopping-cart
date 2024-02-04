@@ -59,3 +59,12 @@ h1 {
   white-space: nowrap;
   width: 0;
 }
+
+button.btn,
+.spinner button {
+  padding: 0.6rem;
+  background-color: lightgray;
+  border-radius: 6px;
+  display: grid;
+  place-content: center;
+}
