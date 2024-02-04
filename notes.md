@@ -141,3 +141,9 @@ Today I need to:
 - I also fully enabled the functionality to add, remove, and adjust items in the cart 🤘
 - Next I need to show the current qty of items displayed on the cart icon in the nav.
 - After that, I can create the drop-down menu with the cart summary.
+
+## 2/4/24
+Today I need to:
+- Refactor the Navbar to have links to each of the product categories
+- Fill out the home page
+- Style the app

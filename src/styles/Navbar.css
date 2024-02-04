@@ -9,3 +9,10 @@ nav {
 nav a {
   align-self: baseline;
 }
+
+nav div.product-links {
+  text-transform: capitalize;
+  display: flex;
+  gap: 2rem;
+  align-items: baseline;
+}

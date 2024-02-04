@@ -2,7 +2,6 @@ import App from './App';
 import ErrorPage from './ErrorPage';
 import Home from './components/Home';
 import Shop from './components/Shop';
-import Cart from './components/Cart';
 
 const routerConfig = [
   {
@@ -15,12 +14,8 @@ const routerConfig = [
         element: <Home />,
       },
       {
-        path: '/shop',
+        path: '/shop/:name',
         element: <Shop />,
-      },
-      {
-        path: '/cart',
-        element: <Cart />,
       },
     ],
   },

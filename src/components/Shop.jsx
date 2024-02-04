@@ -1,3 +1,4 @@
+import { useParams } from 'react-router-dom';
 import Card from './Card';
 import AddToCart from './AddToCart';
 import useFetch from '../utils/use-fetch';
@@ -5,8 +6,11 @@ import '../styles/Shop.css';
 
 // React component for Shop page
 function Shop() {
+  const { name } = useParams(); // name of url endpoint
+  const fetchEndpoint =
+    name === 'all-products' ? '' : `/category/${name.replace('-', '%20')}`;
   const { data, error, loading } = useFetch(
-    'https://fakestoreapi.com/products',
+    `https://fakestoreapi.com/products${fetchEndpoint}`,
   );
 
   // console.log('data:', data, 'error:', error, 'loading:', loading);
