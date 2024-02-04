@@ -12,24 +12,26 @@ function Navbar({ children }) {
 
   return (
     <nav>
-      <Link to="/">
-        <h1>shopping cart</h1>
-      </Link>
-      {error && <p>{error}</p>}
-      {loading && <p>Loading...</p>}
-      {data && (
-        <div className="product-links">
-          <>
-            <Link to="/shop/all-products">all products</Link>
-            {data.map((category) => (
-              <Link to={'shop/' + category.replace(' ', '-')} key={category}>
-                {category}
-              </Link>
-            ))}
-          </>
-        </div>
-      )}
-      {children}
+      <div className="container">
+        <Link to="/">
+          <h1>shopping cart</h1>
+        </Link>
+        {error && <p>{error}</p>}
+        {loading && <p>Loading...</p>}
+        {data && (
+          <div className="product-links">
+            <>
+              <Link to="/shop/all-products">all products</Link>
+              {data.map((category) => (
+                <Link to={'shop/' + category.replace(' ', '-')} key={category}>
+                  {category}
+                </Link>
+              ))}
+            </>
+          </div>
+        )}
+        {children}
+      </div>
     </nav>
   );
 }

@@ -1,3 +1,9 @@
+main {
+  max-width: var(--max-width);
+  margin: var(--margin);
+  padding: 0 var(--padding-horiz);
+}
+
 main .sort-by {
   margin-bottom: 1rem;
   display: flex;
