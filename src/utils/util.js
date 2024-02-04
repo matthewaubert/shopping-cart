@@ -100,3 +100,26 @@ export function formatPrice(price) {
 export function roundHalf(num) {
   return Math.round(num * 2) / 2;
 }
+
+/**
+ * sort given array by keyword
+ * @param {array} array - array of 'item' objs w/ following properties: title, price, rating
+ * @param {string} keyword - e.g. 'title'
+ * @returns sorted shallow copy of given array
+ */
+export function sortBy(array, keyword) {
+  // if keyword is 'rating': sort by item.rating.rate value
+  // else: sort by item[keyword] value
+  const compareFn =
+    keyword === 'rating'
+      ? (a, b) =>
+          a[keyword].rate > b[keyword].rate
+            ? -1
+            : a[keyword].rate < b[keyword].rate
+              ? 1
+              : 0
+      : (a, b) =>
+          a[keyword] < b[keyword] ? -1 : a[keyword] > b[keyword] ? 1 : 0;
+
+  return array.toSorted(compareFn);
+}

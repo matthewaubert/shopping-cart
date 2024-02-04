@@ -144,6 +144,12 @@ Today I need to:
 
 ## 2/4/24
 Today I need to:
-- Refactor the Navbar to have links to each of the product categories
-- Fill out the home page
-- Style the app
+-[x] Refactor the Navbar to have links to each of the product categories
+-[x] Test links
+-[x] Build logic for user to sort product pages
+-[x] Test sorting
+-[ ] Make navbar fixed to top of page
+-[ ] Fill out the home page
+-[ ] Build footer
+-[ ] Improve loading element
+-[ ] Style the app

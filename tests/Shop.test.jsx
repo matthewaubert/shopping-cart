@@ -30,3 +30,9 @@ it('renders the appropriate number of cards', () => {
   render(<Shop />);
   expect(screen.getAllByRole('heading').length).toEqual(data.length);
 });
+
+it('renders an element with options for sorting', () => {
+  render(<Shop />);
+  expect(screen.getByRole('combobox')).toBeInTheDocument();
+  expect(screen.getAllByRole('option').length).toBeGreaterThan(1);
+});

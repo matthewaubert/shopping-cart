@@ -5,6 +5,7 @@ import {
   changeCartItem,
   calcQtyInCart,
   formatPrice,
+  sortBy,
 } from '../utils/util';
 import '../styles/CartIcon.css';
 
@@ -63,7 +64,7 @@ function CartModal({ cart, setCart, setDisplayModal }) {
                 </tr>
               </thead>
               <tbody>
-                {cart.map((item) => (
+                {sortBy(cart, 'title').map((item) => (
                   <tr key={item.id}>
                     <th scope="row" title={item.title}>
                       {item.title}

@@ -1,3 +1,10 @@
+main .sort-by {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: flex-end;
+  gap: 0.4rem;
+}
+
 div.products {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
