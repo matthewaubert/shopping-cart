@@ -14,7 +14,8 @@ nav > .container {
   align-items: baseline;
 }
 
-nav a {
+nav a,
+.product-links p {
   font-weight: 500;
   align-self: baseline;
 }

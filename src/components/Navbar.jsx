@@ -16,10 +16,10 @@ function Navbar({ colorScheme, children }) {
         <Link to="/">
           <h1>shopping app</h1>
         </Link>
-        {error && <p>{error}</p>}
-        {loading && <p>Loading...</p>}
-        {data && (
-          <div className="product-links">
+        <div className="product-links">
+          {error && <p className="error">{error}</p>}
+          {loading && <p>Loading...</p>}
+          {data && (
             <>
               <Link to="/shop/all-products">all products</Link>
               {data.map((category) => (
@@ -28,8 +28,8 @@ function Navbar({ colorScheme, children }) {
                 </Link>
               ))}
             </>
-          </div>
-        )}
+          )}
+        </div>
         {children}
       </div>
     </nav>
