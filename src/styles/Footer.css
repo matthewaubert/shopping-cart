@@ -1,0 +1,38 @@
+footer {
+  color: white;
+  text-align: left;
+}
+
+footer .container {
+  max-width: var(--max-width);
+  margin: var(--margin);
+  padding: 1.8rem var(--padding-horiz);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+footer .social-media {
+  padding: 0.12rem 0rem;
+  display: flex;
+  gap: 0.9rem;
+}
+
+.social-media a {
+  display: grid;
+}
+
+.social-media svg {
+  fill: white;
+  height: 1.3rem;
+  overflow: visible;
+}
+
+footer .links {
+  display: flex;
+  gap: 2rem;
+}
+
+footer .links a:hover {
+  text-decoration: underline;
+}

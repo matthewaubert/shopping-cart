@@ -38,7 +38,6 @@ function Navbar({ colorScheme, children }) {
 
 Navbar.propTypes = {
   colorScheme: PropTypes.shape({
-    cartModalBg: PropTypes.string,
     navBg: PropTypes.string.isRequired,
   }).isRequired,
   children: PropTypes.element,

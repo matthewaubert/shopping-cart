@@ -1,13 +1,11 @@
 .welcome {
   text-align: left;
-  max-width: 50%;
-
-  position: absolute;
-  top: 50vh;
-  transform: translateY(-50%);
+  max-width: 45%;
+  min-height: calc(100vh - 70.88px - 157.39px);
 
   display: flex;
   flex-direction: column;
+  justify-content: center;
   align-items: flex-start;
   gap: 1rem;
 }

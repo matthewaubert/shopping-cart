@@ -151,6 +151,8 @@ Today I need to:
 - [x] Make navbar stick to top of page
 - [x] Build home page
 - [x] Build loading element
-- [ ] Build footer
+
+## 2/5/24
+- [x] Build footer
 - [ ] Style the app
 - [ ] Make app responsive

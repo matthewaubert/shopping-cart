@@ -41,7 +41,6 @@ CartIcon.propTypes = {
   setCart: PropTypes.func.isRequired,
   colorScheme: PropTypes.shape({
     cartModalBg: PropTypes.string.isRequired,
-    navBg: PropTypes.string,
   }).isRequired,
 };
 
@@ -123,7 +122,6 @@ CartModal.propTypes = {
   setCart: PropTypes.func.isRequired,
   colorScheme: PropTypes.shape({
     cartModalBg: PropTypes.string.isRequired,
-    navBg: PropTypes.string,
   }).isRequired,
   setDisplayModal: PropTypes.func.isRequired,
 };

@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { Outlet, useParams } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import CartIcon from './components/CartIcon';
+import Footer from './components/Footer';
 import './App.css';
 
 function App() {
@@ -10,8 +11,10 @@ function App() {
 
   // console.log(cart);
   const colorScheme = name
-    ? { cartModalBg: 'white', navBg: 'white' }
-    : { cartModalBg: '#f1abba', navBg: 'transparent' };
+    // product pages
+    ? { cartModalBg: 'white', footerBg: '#555', navBg: 'white' }
+    // home page
+    : { cartModalBg: '#f1abba', footerBg: '#d41f56', navBg: 'transparent' };
 
   return (
     <>
@@ -21,6 +24,7 @@ function App() {
       <main>
         <Outlet context={[cart, setCart]} />
       </main>
+      <Footer colorScheme={colorScheme} />
     </>
   );
 }

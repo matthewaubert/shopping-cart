@@ -9,6 +9,7 @@ div.products {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(12.2rem, 1fr));
   gap: 1.4rem;
+  margin-bottom: 2.6rem;
 }
 
 .loader {
