@@ -1,3 +1,4 @@
+import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import useFetch from '../utils/use-fetch';
@@ -7,13 +8,36 @@ function Navbar({ colorScheme, children }) {
   const { data, error, loading } = useFetch(
     'https://fakestoreapi.com/products/categories',
   );
+  const navbarRef = useRef(null);
+
+  // add shadow to navbar when user scrolls down
+  useEffect(() => {
+    function onScroll() {
+      window.scrollY > 0
+        ? navbarRef.current.classList.add('shadow')
+        : navbarRef.current.classList.remove('shadow');
+    }
+
+    window.addEventListener('scroll', onScroll);
+
+    return () => {
+      window.removeEventListener('scroll', onScroll);
+    };
+  });
 
   // console.log(data);
 
   return (
-    <nav style={{ backgroundColor: colorScheme.navBg }}>
+    <nav ref={navbarRef} style={{ backgroundColor: colorScheme.navBg }}>
       <div className="container">
-        <Link to="/">
+        <Link
+          to="/"
+          className="logo"
+          style={{
+            color: colorScheme.accent,
+            textDecorationColor: colorScheme.accent,
+          }}
+        >
           <h1>shopping app</h1>
         </Link>
         <div className="product-links">
@@ -38,6 +62,7 @@ function Navbar({ colorScheme, children }) {
 
 Navbar.propTypes = {
   colorScheme: PropTypes.shape({
+    accent: PropTypes.string.isRequired,
     navBg: PropTypes.string.isRequired,
   }).isRequired,
   children: PropTypes.element,

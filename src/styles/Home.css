@@ -1,13 +1,13 @@
 .welcome {
   text-align: left;
   max-width: 45%;
-  min-height: calc(100vh - 70.88px - 157.39px);
+  min-height: calc(100vh - 70.98px - 156.42px);
 
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 1rem;
+  gap: 1.4rem;
 }
 
 .welcome h2 {
@@ -17,14 +17,19 @@
 .welcome a {
   padding: 1rem 1.4rem;
   background-color: transparent;
-  border: 6px solid #d41f56;
+  border: 6px solid var(--accent-home);
   border-radius: 6px;
-  color: #d41f56;
+  color: var(--accent-home);
   font-weight: 700;
   text-transform: uppercase;
 
   display: grid;
   place-content: center;
+}
+
+.welcome a:hover {
+  background-color: var(--accent-home);
+  color: #f1abba;
 }
 
 div.background {

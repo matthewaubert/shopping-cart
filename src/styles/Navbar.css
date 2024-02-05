@@ -1,16 +1,29 @@
 nav {
+  border-bottom: 1px solid transparent;
   position: sticky;
   top: 0;
   z-index: 2;
 }
 
+.shadow {
+  box-shadow: var(--shadow-2);
+  border-bottom: 1px solid var(--gray-300);
+}
+
 nav > .container {
   max-width: var(--max-width);
-  padding: 1rem var(--padding-horiz);
+  padding: 0.7rem var(--padding-horiz) 1.3rem;
   margin: var(--margin);
   position: relative;
   display: flex;
   justify-content: space-between;
+  align-items: baseline;
+}
+
+nav div.product-links {
+  text-transform: capitalize;
+  display: flex;
+  gap: 2rem;
   align-items: baseline;
 }
 
@@ -20,13 +33,7 @@ nav a,
   align-self: baseline;
 }
 
-nav a:hover {
-  text-decoration: underline;
-}
-
-nav div.product-links {
-  text-transform: capitalize;
-  display: flex;
-  gap: 2rem;
-  align-items: baseline;
+.product-links a:hover,
+a.logo:hover {
+  text-decoration-line: underline;
 }

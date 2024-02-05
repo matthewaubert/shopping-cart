@@ -17,7 +17,7 @@ form.atc-form {
 
 button.remove {
   background: transparent;
-  color: blue;
+  color: var(--accent-shop);
   font-size: inherit;
   font-weight: inherit;
   padding: 0;

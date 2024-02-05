@@ -1,5 +1,5 @@
 #root {
-  color: #222;
+  color: var(--gray-800);
   min-height: 100%;
   margin: var(--margin);
   text-align: center;
@@ -9,4 +9,5 @@ main {
   max-width: var(--max-width);
   margin: var(--margin);
   padding: 0 var(--padding-horiz);
+  min-height: calc(100vh - 70.98px - 153.25px);
 }

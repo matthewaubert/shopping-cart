@@ -36,3 +36,7 @@ footer .links {
 footer .links a:hover {
   text-decoration: underline;
 }
+
+footer .copyright {
+  font-size: 0.85rem;
+}

@@ -1,4 +1,5 @@
 div.spinner {
+  border-radius: 7px;
   display: grid;
   grid-template-columns: repeat(3, min-content);
   align-items: stretch;
@@ -9,9 +10,15 @@ div.spinner {
   -moz-appearance: textfield;
   appearance: none;
 
-  border: 1px solid darkgray;
+  border: none;
+  border-top: 1px solid var(--gray-400);
+  border-bottom: 1px solid var(--gray-400);
   height: 100%;
   padding: 0.2rem 0.5rem;
+}
+
+.spinner input[type=number]:hover {
+  box-shadow: inset var(--shadow-1);
 }
 
 /* Chrome, Safari, Edge, Opera */
@@ -23,10 +30,12 @@ div.spinner {
 
 .spinner button.dec {
   border-radius: 6px 0 0 6px;
+  border-right: 1px solid var(--gray-400);
 }
 
 .spinner button.inc {
   border-radius: 0 6px 6px 0;
+  border-left: 1px solid var(--gray-400);
 }
 
 .spinner svg {

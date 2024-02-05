@@ -2,12 +2,28 @@ main .sort-by {
   margin-bottom: 1rem;
   display: flex;
   justify-content: flex-end;
+  align-items: baseline;
   gap: 0.4rem;
 }
 
+.sort-by > select {
+  -moz-appearance: none; 
+  -webkit-appearance: none; 
+  appearance: none;
+  background: url('../assets/chevron-down.svg') no-repeat;
+  background-color: white;
+  background-position: right;
+
+  font-family: inherit;
+  border: 1px solid var(--gray-400);
+  border-radius: 6px;
+  padding: 0.3rem 1.85rem 0.4rem 0.55rem;
+}
+
+
 div.products {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12.2rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(12.8rem, 1fr));
   gap: 1.4rem;
   margin-bottom: 2.6rem;
 }
@@ -20,12 +36,11 @@ div.products {
   top: 50vh;
   transform: translate(-50%, -50%);
   filter: drop-shadow(var(--shadow-2));
-  pointer-events: none;
   z-index: 2;
 }
 
 .loader > path {
-  fill: #333;
+  fill: var(--accent-shop);
   transform-origin: center;
   animation: spinner_svv2 .75s infinite linear;
 }
