@@ -25,4 +25,10 @@ Review my <a href="./notes.md">notes</a> to see my planning process.
 
 ## Credits
 
-- Product information from <a href="https://fakestoreapi.com/">FakeStore API</a>
+- Product information and images from <a href="https://fakestoreapi.com/">FakeStore API</a>
+
+- Home background image by <a href="https://www.freepik.com/free-photo/portrait-curly-pink-haired-woman-massive-white-headphones_15971449.htm#from_view=detail_author">lookstudio</a> on Freepik
+
+- SVG icons from <a href="https://pictogrammers.com/library/mdi/">Pictogrammers</a>
+
+- Social media icons from <a href="https://devicon.dev/">Devicon</a> and <a href="https://icons.getbootstrap.com/">Bootstrap</a>

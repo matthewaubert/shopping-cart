@@ -154,5 +154,7 @@ Today I need to:
 
 ## 2/5/24
 - [x] Build footer
+- [x] Update credits in README
 - [ ] Style the app
 - [ ] Make app responsive
+- [ ] Add favicon
