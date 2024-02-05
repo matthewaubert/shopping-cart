@@ -144,13 +144,13 @@ Today I need to:
 
 ## 2/4/24
 Today I need to:
--[x] Refactor the Navbar to have links to each of the product categories
--[x] Test links
--[x] Build logic for user to sort product pages
--[x] Test sorting
--[x] Make navbar stick to top of page
--[x] Build home page
--[ ] Build footer
--[ ] Improve loading element
--[ ] Style the app
--[ ] Make app responsive
+- [x] Refactor the Navbar to have links to each of the product categories
+- [x] Test links
+- [x] Build logic for user to sort product pages
+- [x] Test sorting
+- [x] Make navbar stick to top of page
+- [x] Build home page
+- [x] Build loading element
+- [ ] Build footer
+- [ ] Style the app
+- [ ] Make app responsive

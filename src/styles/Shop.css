@@ -10,3 +10,27 @@ div.products {
   grid-template-columns: repeat(auto-fill, minmax(12.2rem, 1fr));
   gap: 1.4rem;
 }
+
+.loader {
+  width: min(calc(3.8rem + 4.25vw), 6rem);
+  height: min(calc(3.8rem + 4.25vw), 6rem);
+  position: fixed;
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(var(--shadow-2));
+  pointer-events: none;
+  z-index: 2;
+}
+
+.loader > path {
+  fill: #333;
+  transform-origin: center;
+  animation: spinner_svv2 .75s infinite linear;
+}
+
+@keyframes spinner_svv2 {
+  100% {
+    transform: rotate(360deg);
+  }
+}
