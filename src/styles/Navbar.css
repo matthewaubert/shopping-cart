@@ -1,5 +1,4 @@
 nav {
-  background-color: white;
   position: sticky;
   top: 0;
   z-index: 2;
@@ -16,7 +15,12 @@ nav > .container {
 }
 
 nav a {
+  font-weight: 500;
   align-self: baseline;
+}
+
+nav a:hover {
+  text-decoration: underline;
 }
 
 nav div.product-links {

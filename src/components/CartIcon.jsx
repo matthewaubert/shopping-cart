@@ -9,7 +9,7 @@ import {
 } from '../utils/util';
 import '../styles/CartIcon.css';
 
-function CartIcon({ cart, setCart }) {
+function CartIcon({ cart, setCart, colorScheme }) {
   const [displayModal, setDisplayModal] = useState(false);
 
   const itemsInCart = calcQtyInCart(cart);
@@ -28,6 +28,7 @@ function CartIcon({ cart, setCart }) {
         <CartModal
           cart={cart}
           setCart={setCart}
+          colorScheme={colorScheme}
           setDisplayModal={setDisplayModal}
         />
       )}
@@ -38,10 +39,14 @@ function CartIcon({ cart, setCart }) {
 CartIcon.propTypes = {
   cart: PropTypes.array.isRequired,
   setCart: PropTypes.func.isRequired,
+  colorScheme: PropTypes.shape({
+    cartModalBg: PropTypes.string.isRequired,
+    navBg: PropTypes.string,
+  }).isRequired,
 };
 
 // return a popup modal with a line for each item in cart
-function CartModal({ cart, setCart, setDisplayModal }) {
+function CartModal({ cart, setCart, colorScheme, setDisplayModal }) {
   function removeFromCart(item) {
     setCart(changeCartItem({ ...item, quantity: 0 }, cart));
   }
@@ -50,7 +55,11 @@ function CartModal({ cart, setCart, setDisplayModal }) {
   return (
     <>
       <div className="modal-bg" onClick={closeModal}></div>
-      <div className="cart-modal" data-testid="cart-modal">
+      <div
+        className="cart-modal"
+        data-testid="cart-modal"
+        style={{ backgroundColor: colorScheme.cartModalBg }}
+      >
         {cart.length > 0 ? (
           <>
             <table>
@@ -92,15 +101,14 @@ function CartModal({ cart, setCart, setDisplayModal }) {
                 </tr>
               </tfoot>
             </table>
-            <button className="checkout btn">
-              <a
-                href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
-                target="_blank"
-                rel="noreferrer"
-              >
-                Checkout
-              </a>
-            </button>
+            <a
+              href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
+              target="_blank"
+              rel="noreferrer"
+              className="checkout btn"
+            >
+              Checkout
+            </a>
           </>
         ) : (
           <div>You have no items in your cart!</div>
@@ -113,6 +121,10 @@ function CartModal({ cart, setCart, setDisplayModal }) {
 CartModal.propTypes = {
   cart: PropTypes.array.isRequired,
   setCart: PropTypes.func.isRequired,
+  colorScheme: PropTypes.shape({
+    cartModalBg: PropTypes.string.isRequired,
+    navBg: PropTypes.string,
+  }).isRequired,
   setDisplayModal: PropTypes.func.isRequired,
 };
 

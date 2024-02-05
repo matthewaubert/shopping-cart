@@ -1,19 +1,26 @@
 import { useState } from 'react';
-import { Outlet } from 'react-router-dom';
+import { Outlet, useParams } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import CartIcon from './components/CartIcon';
 import './App.css';
 
 function App() {
   const [cart, setCart] = useState([]);
-  console.log(cart);
+  const { name } = useParams(); // name of url endpoint
+
+  // console.log(cart);
+  const colorScheme = name
+    ? { cartModalBg: 'white', navBg: 'white' }
+    : { cartModalBg: '#f1abba', navBg: 'transparent' };
 
   return (
     <>
-      <Navbar>
-        <CartIcon cart={cart} setCart={setCart} />
+      <Navbar colorScheme={colorScheme}>
+        <CartIcon cart={cart} setCart={setCart} colorScheme={colorScheme} />
       </Navbar>
-      <Outlet context={[cart, setCart]} />
+      <main>
+        <Outlet context={[cart, setCart]} />
+      </main>
     </>
   );
 }

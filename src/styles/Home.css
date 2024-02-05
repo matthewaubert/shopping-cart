@@ -1,0 +1,44 @@
+.welcome {
+  text-align: left;
+  max-width: 50%;
+
+  position: absolute;
+  top: 50vh;
+  transform: translateY(-50%);
+
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.welcome h2 {
+  font-size: 3rem;
+}
+
+.welcome a {
+  padding: 1rem 1.4rem;
+  background-color: transparent;
+  border: 6px solid #d41f56;
+  border-radius: 6px;
+  color: #d41f56;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  display: grid;
+  place-content: center;
+}
+
+div.background {
+  background-image: url('../assets/background.jpg');
+  background-origin: border-box;
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: -1;
+}

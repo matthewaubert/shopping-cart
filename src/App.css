@@ -1,4 +1,12 @@
 #root {
+  color: #222;
+  min-height: 100%;
   margin: var(--margin);
   text-align: center;
+}
+
+main {
+  max-width: var(--max-width);
+  margin: var(--margin);
+  padding: 0 var(--padding-horiz);
 }

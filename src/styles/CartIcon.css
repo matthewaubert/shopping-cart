@@ -44,8 +44,8 @@ div.cart-modal {
   text-align: left;
 
   position: absolute;
-  top: 43px;
-  right: 0;
+  top: 62px;
+  right: var(--padding-horiz);
   z-index: 1;
 }
 
@@ -84,10 +84,6 @@ div.cart-modal {
   font-weight: 700;
 }
 
-button.checkout {
+a.checkout {
   float: right;
-}
-
-button.checkout a {
-  text-decoration: none;
 }

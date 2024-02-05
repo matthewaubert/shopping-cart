@@ -1,9 +1,3 @@
-main {
-  max-width: var(--max-width);
-  margin: var(--margin);
-  padding: 0 var(--padding-horiz);
-}
-
 main .sort-by {
   margin-bottom: 1rem;
   display: flex;
@@ -13,6 +7,6 @@ main .sort-by {
 
 div.products {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(12rem, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(12.2rem, 1fr));
   gap: 1.4rem;
 }

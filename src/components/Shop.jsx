@@ -20,7 +20,7 @@ function Shop() {
   console.log(data);
 
   return (
-    <main>
+    <>
       <label className="sort-by">
         Sort by:
         <select
@@ -44,7 +44,7 @@ function Shop() {
           ))}
         </div>
       )}
-    </main>
+    </>
   );
 }
 

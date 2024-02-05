@@ -3,18 +3,18 @@ import { Link } from 'react-router-dom';
 import useFetch from '../utils/use-fetch';
 import '../styles/Navbar.css';
 
-function Navbar({ children }) {
+function Navbar({ colorScheme, children }) {
   const { data, error, loading } = useFetch(
     'https://fakestoreapi.com/products/categories',
   );
 
-  console.log(data);
+  // console.log(data);
 
   return (
-    <nav>
+    <nav style={{ backgroundColor: colorScheme.navBg }}>
       <div className="container">
         <Link to="/">
-          <h1>shopping cart</h1>
+          <h1>shopping app</h1>
         </Link>
         {error && <p>{error}</p>}
         {loading && <p>Loading...</p>}
@@ -37,6 +37,10 @@ function Navbar({ children }) {
 }
 
 Navbar.propTypes = {
+  colorScheme: PropTypes.shape({
+    cartModalBg: PropTypes.string,
+    navBg: PropTypes.string.isRequired,
+  }).isRequired,
   children: PropTypes.element,
 };
 

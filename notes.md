@@ -148,11 +148,8 @@ Today I need to:
 -[x] Test links
 -[x] Build logic for user to sort product pages
 -[x] Test sorting
--[ ] Make navbar fixed to top of page
 -[x] Make navbar stick to top of page
--[ ] Fill out the home page
--[ ] Build footer
--[ ] Improve loading element
+-[x] Build home page
 -[ ] Build footer
 -[ ] Improve loading element
 -[ ] Style the app
