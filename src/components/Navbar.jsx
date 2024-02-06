@@ -1,10 +1,15 @@
 import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import HamburgerMenu from './HamburgerMenu';
 import useFetch from '../utils/use-fetch';
+import useMediaQuery from '../utils/use-media-query';
 import '../styles/Navbar.css';
 
 function Navbar({ colorScheme, children }) {
+  // check if window matches media query
+  const matchesMediaQuery = useMediaQuery('(max-width: 875px)');
+  // fetch product categories from API
   const { data, error, loading } = useFetch(
     'https://fakestoreapi.com/products/categories',
   );
@@ -30,6 +35,22 @@ function Navbar({ colorScheme, children }) {
   return (
     <nav ref={navbarRef} style={{ backgroundColor: colorScheme.navBg }}>
       <div className="container">
+        {matchesMediaQuery && (
+          <HamburgerMenu>
+            <div
+              className="product-links"
+              style={{ backgroundColor: colorScheme.modalBg }}
+            >
+              <ProductLinks
+                data={data}
+                error={error}
+                loading={loading}
+                isModal={matchesMediaQuery}
+                colorScheme={colorScheme}
+              />
+            </div>
+          </HamburgerMenu>
+        )}
         <Link
           to="/"
           className="logo"
@@ -40,20 +61,11 @@ function Navbar({ colorScheme, children }) {
         >
           <h1>shopping app</h1>
         </Link>
-        <div className="product-links">
-          {error && <p className="error">{error}</p>}
-          {loading && <p>Loading...</p>}
-          {data && (
-            <>
-              <Link to="/shop/all-products">all products</Link>
-              {data.map((category) => (
-                <Link to={'shop/' + category.replace(' ', '-')} key={category}>
-                  {category}
-                </Link>
-              ))}
-            </>
-          )}
-        </div>
+        {!matchesMediaQuery && (
+          <div className="product-links">
+            <ProductLinks data={data} error={error} loading={loading} />
+          </div>
+        )}
         {children}
       </div>
     </nav>
@@ -63,9 +75,35 @@ function Navbar({ colorScheme, children }) {
 Navbar.propTypes = {
   colorScheme: PropTypes.shape({
     accent: PropTypes.string.isRequired,
+    modalBg: PropTypes.string.isRequired,
     navBg: PropTypes.string.isRequired,
   }).isRequired,
   children: PropTypes.element,
+};
+
+function ProductLinks({ data, error, loading }) {
+  return (
+    <>
+      {error && <p className="error">{error}</p>}
+      {loading && <p>Loading...</p>}
+      {data && (
+        <>
+          <Link to="/shop/all-products">all products</Link>
+          {data.map((category) => (
+            <Link to={'shop/' + category.replace(' ', '-')} key={category}>
+              {category}
+            </Link>
+          ))}
+        </>
+      )}
+    </>
+  );
+}
+
+ProductLinks.propTypes = {
+  data: PropTypes.array,
+  error: PropTypes.string,
+  loading: PropTypes.bool.isRequired,
 };
 
 export default Navbar;

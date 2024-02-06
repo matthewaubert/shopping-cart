@@ -1,0 +1,12 @@
+button.hamburger {
+  background-color: transparent;
+  z-index: 3;
+  display: grid;
+  place-content: center;
+  align-self: center;
+}
+
+button.hamburger svg {
+  fill: var(--gray-800);
+  width: 2.2rem;
+}
