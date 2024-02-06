@@ -1,18 +1,20 @@
 nav {
   border-bottom: 1px solid transparent;
+  line-height: 1;
   position: sticky;
   top: 0;
   z-index: 2;
 }
 
 .shadow {
+  background-color: #f6a5b4;
   box-shadow: var(--shadow-2);
-  border-bottom: 1px solid var(--gray-300);
+  border-bottom: 1px solid rgba(0,0,0,0.15);
 }
 
 nav > .container {
   max-width: var(--max-width);
-  padding: 0.7rem var(--padding-horiz) 1.3rem;
+  padding: 1.0rem var(--padding-horiz);
   margin: var(--margin);
   position: relative;
   display: flex;
@@ -23,7 +25,7 @@ nav > .container {
 nav div.product-links {
   text-transform: capitalize;
   display: flex;
-  gap: 2rem;
+  gap: min(2.5vw, 2rem);
   align-items: baseline;
 }
 

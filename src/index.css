@@ -75,15 +75,75 @@ h1 {
 
 .btn,
 .spinner button {
-  background-color: lightgray;
+  background-color: var(--gray-300);
   border: 1px solid transparent;
   border-radius: 6px;
-  padding: 0.6rem;
   display: grid;
   place-content: center;
+}
+
+.btn {
+  padding: 0.6rem 0.45rem 0.8rem;
+}
+
+.spinner button {
+  padding: 0.6rem;
 }
 
 .btn:hover,
 .spinner button:hover {
   border: 1px solid var(--gray-400);
+}
+
+.hamburger:hover,
+.cart-btn:hover {
+  transform: scale(1.08);
+}
+
+div.modal-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.modal {
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 10px;
+  box-shadow: var(--shadow-2);
+  text-align: left;
+  overflow: hidden;
+  position: absolute;
+  top: 58px;
+  z-index: 2;
+}
+
+@media (max-width: 875px) {
+  nav div.product-links {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1.3rem;
+  }
+
+  nav div.product-links a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 515px) {
+  div.cart-modal {
+    max-width: calc(100vw - var(--padding-horiz) * 2);
+    overflow: scroll;
+  }
+
+  div.cart-modal > div.table {
+    overflow: scroll;
+  }
+
+  footer .links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

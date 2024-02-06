@@ -30,7 +30,7 @@ footer .social-media {
 
 footer .links {
   display: flex;
-  gap: 2rem;
+  gap: min(5.5vw, 2rem);
 }
 
 footer .links a:hover {

@@ -153,8 +153,14 @@ Today I need to:
 - [x] Build loading element
 
 ## 2/5/24
+Today I need to:
 - [x] Build footer
 - [x] Update credits in README
 - [x] Style the app
-- [ ] Make app responsive
+
+## 2/6/24
+Today I need to:
+- [x] Build hamburger menu component
+- [x] Make app responsive
 - [ ] Add favicon
+- [ ] Write tests for error page?

@@ -4,11 +4,7 @@ button.cart-btn {
   position: relative;
   display: grid;
   place-content: center;
-  z-index: 2;
-}
-
-button.cart-btn:hover {
-  transform: scale(1.08);
+  z-index: 3;
 }
 
 .cart-btn svg {
@@ -35,39 +31,29 @@ button.cart-btn:hover {
 
 /* cart modal */
 
-div.modal-bg {
-  position: fixed;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
+div.cart-modal {
+  padding: 1.2rem 1.4rem;
+  right: var(--padding-horiz);
 }
 
-div.cart-modal {
-  background-color: white;
-  border: 1px solid lightgray;
-  border-radius: 10px;
-  box-shadow: var(--shadow-2);
-  padding: 1.2rem 1.4rem;
-  text-align: left;
-
-  position: absolute;
-  top: 64px;
-  right: var(--padding-horiz);
-  z-index: 1;
+.cart-modal > div.table {
+  margin-bottom: 0.8rem;
 }
 
 .cart-modal table {
   border-collapse: collapse;
   font-size: 0.9rem;
-  margin-bottom: 0.6rem;
 }
 
 .cart-modal caption {
   font-size: 1rem;
   font-weight: 700;
   text-align: inherit;
-  margin-bottom: 0.2rem;
+  margin-bottom: 0.6rem;
+}
+
+.cart-modal thead th {
+  white-space: nowrap;
 }
 
 .cart-modal tbody th {

@@ -45,6 +45,7 @@ CartIcon.propTypes = {
   setCart: PropTypes.func.isRequired,
   colorScheme: PropTypes.shape({
     accent: PropTypes.string.isRequired,
+    modalBg: PropTypes.string.isRequired,
   }).isRequired,
 };
 
@@ -59,52 +60,54 @@ function CartModal({ cart, setCart, colorScheme, setDisplayModal }) {
     <>
       <div className="modal-bg" onClick={closeModal}></div>
       <div
-        className="cart-modal"
+        className="cart-modal modal"
         data-testid="cart-modal"
-        style={{ backgroundColor: colorScheme.cartModalBg }}
+        style={{ backgroundColor: colorScheme.modalBg }}
       >
         {cart.length > 0 ? (
           <>
-            <table>
-              <caption>Items In Your Cart: </caption>
-              <thead>
-                <tr>
-                  <th scope="col">Product</th>
-                  <th scope="col">Amount</th>
-                  <th scope="col">Unit Price</th>
-                  <th scope="col">Total Price</th>
-                </tr>
-              </thead>
-              <tbody>
-                {sortBy(cart, 'title').map((item) => (
-                  <tr key={item.id}>
-                    <th scope="row" title={item.title}>
-                      {item.title}
-                    </th>
-                    <td>{item.quantity}</td>
-                    <td>{formatPrice(item.price)}</td>
-                    <td>{formatPrice(item.quantity * item.price)}</td>
-                    <td>
-                      <button
-                        className="remove"
-                        style={{ color: colorScheme.accent }}
-                        onClick={() => removeFromCart(item)}
-                      >
-                        Remove
-                      </button>
-                    </td>
+            <div className="table">
+              <table>
+                <caption>Items In Your Cart: </caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Product</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Unit Price</th>
+                    <th scope="col">Total Price</th>
                   </tr>
-                ))}
-              </tbody>
-              <tfoot>
-                <tr>
-                  <th scope="row" colSpan="3">
-                    Shopping Cart Total
-                  </th>
-                  <td>{formatPrice(calcCartTotal(cart))}</td>
-                </tr>
-              </tfoot>
-            </table>
+                </thead>
+                <tbody>
+                  {sortBy(cart, 'title').map((item) => (
+                    <tr key={item.id}>
+                      <th scope="row" title={item.title}>
+                        {item.title}
+                      </th>
+                      <td>{item.quantity}</td>
+                      <td>{formatPrice(item.price)}</td>
+                      <td>{formatPrice(item.quantity * item.price)}</td>
+                      <td>
+                        <button
+                          className="remove"
+                          style={{ color: colorScheme.accent }}
+                          onClick={() => removeFromCart(item)}
+                        >
+                          Remove
+                        </button>
+                      </td>
+                    </tr>
+                  ))}
+                </tbody>
+                <tfoot>
+                  <tr>
+                    <th scope="row" colSpan="3">
+                      Shopping Cart Total
+                    </th>
+                    <td>{formatPrice(calcCartTotal(cart))}</td>
+                  </tr>
+                </tfoot>
+              </table>
+            </div>
             <a
               href="https://www.youtube.com/watch?v=dQw4w9WgXcQ&ab_channel=RickAstley"
               target="_blank"
@@ -126,8 +129,8 @@ CartModal.propTypes = {
   cart: PropTypes.array.isRequired,
   setCart: PropTypes.func.isRequired,
   colorScheme: PropTypes.shape({
-    accent: PropTypes.string.inRequired,
-    cartModalBg: PropTypes.string.isRequired,
+    accent: PropTypes.string.isRequired,
+    modalBg: PropTypes.string.isRequired,
   }).isRequired,
   setDisplayModal: PropTypes.func.isRequired,
 };

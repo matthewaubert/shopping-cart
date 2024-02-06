@@ -11,8 +11,8 @@ function App() {
 
   // console.log(cart);
   const colorScheme = name
-    ? { accent: '#0284c7', cartModalBg: 'white', navBg: '#f3f4f6' } // product pages
-    : { accent: '#d41f56', cartModalBg: '#f1abba', navBg: 'transparent' }; // home page
+    ? { accent: '#0284c7', modalBg: 'white', navBg: '#f3f4f6' } // product pages
+    : { accent: '#d41f56', modalBg: '#fec3d0', navBg: '' }; // home page
 
   return (
     <>

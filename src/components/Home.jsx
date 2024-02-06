@@ -4,7 +4,7 @@ function Home() {
   return (
     <>
       <div className="welcome">
-        <h2>
+        <h2 className="header">
           Save on the latest in men&apos;s and women&apos;s fashion,
           electronics, and jewelry!
         </h2>
