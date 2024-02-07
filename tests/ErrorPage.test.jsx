@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
-import ErrorPage from '../src/ErrorPage';
+import ErrorPage from '../src/pages/ErrorPage';
 
 it('renders app logo', () => {
   render(<ErrorPage />, { wrapper: BrowserRouter });

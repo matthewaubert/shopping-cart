@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useParams } from 'react-router-dom';
-import Card from './Card';
-import AddToCart from './AddToCart';
-import Loader from './Loader';
+import Card from '../components/Card';
+import AddToCart from '../components/AddToCart';
+import Loader from '../components/Loader';
 import useFetch from '../utils/use-fetch';
 import { sortBy } from '../utils/util';
 import '../styles/Shop.css';

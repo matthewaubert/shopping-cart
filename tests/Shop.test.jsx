@@ -1,6 +1,6 @@
 import { vi } from 'vitest';
 import { render, screen } from '@testing-library/react';
-import Shop from '../src/components/Shop';
+import Shop from '../src/pages/Shop';
 import { data as exampleData } from './example-data';
 
 // mock useParams

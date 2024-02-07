@@ -166,5 +166,5 @@ Today I need to:
 - [x] Edit and write tests for error page
 - [x] Ensure all tests still pass
 - [x] Clean up JS and CSS
-- [ ] Reorganize pages/components
+- [x] Reorganize pages/components
 - [ ] Check/improve accessibility
