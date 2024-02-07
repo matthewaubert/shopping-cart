@@ -3,7 +3,7 @@ import '../styles/Footer.css';
 
 function Footer({ colorScheme }) {
   return (
-    <footer style={{ backgroundColor: colorScheme.accent }}>
+    <footer style={colorScheme && { backgroundColor: colorScheme.accent }}>
       <div className="container">
         <div className="social-media">
           <a href="">
@@ -48,8 +48,7 @@ function Footer({ colorScheme }) {
 Footer.propTypes = {
   colorScheme: PropTypes.shape({
     accent: PropTypes.string.isRequired,
-  }).isRequired,
-  children: PropTypes.element,
+  }),
 };
 
 export default Footer;

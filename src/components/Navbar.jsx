@@ -33,20 +33,20 @@ function Navbar({ colorScheme, children }) {
   // console.log(data);
 
   return (
-    <nav ref={navbarRef} style={{ backgroundColor: colorScheme.navBg }}>
+    <nav ref={navbarRef} style={colorScheme && { backgroundColor: colorScheme.navBg }}>
       <div className="container">
         {matchesMediaQuery && (
           <HamburgerMenu>
             <div
               className="product-links"
-              style={{ backgroundColor: colorScheme.modalBg }}
+              style={colorScheme && { backgroundColor: colorScheme.modalBg }}
             >
               <ProductLinks
                 data={data}
                 error={error}
                 loading={loading}
                 isModal={matchesMediaQuery}
-                colorScheme={colorScheme}
+                colorScheme={colorScheme && colorScheme}
               />
             </div>
           </HamburgerMenu>
@@ -54,7 +54,7 @@ function Navbar({ colorScheme, children }) {
         <Link
           to="/"
           className="logo"
-          style={{
+          style={colorScheme && {
             color: colorScheme.accent,
             textDecorationColor: colorScheme.accent,
           }}
@@ -77,7 +77,7 @@ Navbar.propTypes = {
     accent: PropTypes.string.isRequired,
     modalBg: PropTypes.string.isRequired,
     navBg: PropTypes.string.isRequired,
-  }).isRequired,
+  }),
   children: PropTypes.element,
 };
 

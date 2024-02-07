@@ -125,13 +125,13 @@ describe('Cart Modal', () => {
     expect(screen.getByText(/no items in your cart/i)).toBeInTheDocument();
   });
 
-  it('has a `checkout` button if items are in the cart', async () => {
+  it('has a `checkout` link if items are in the cart', async () => {
     const user = userEvent.setup();
     render(<CartIcon cart={exampleCart} setCart={setCart} />);
 
     await user.click(screen.getByRole('button', { name: /shopping cart/i }));
     expect(
-      screen.getByRole('button', { name: /checkout/i }),
+      screen.getByRole('link', { name: /checkout/i }),
     ).toBeInTheDocument();
   });
 
@@ -146,9 +146,3 @@ describe('Cart Modal', () => {
     );
   });
 });
-
-// it.skip('', () => {});
-
-// expect(
-//   screen.getByRole('table', /items in your cart/i),
-// ).toBeInTheDocument();

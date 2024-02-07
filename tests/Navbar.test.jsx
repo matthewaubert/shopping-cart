@@ -3,6 +3,11 @@ import { render, screen } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Navbar from '../src/components/Navbar';
 
+// mock useMediaQuery
+vi.mock('../src/utils/use-media-query', () => ({
+  default: () => false,
+}));
+
 // mock useFetch
 vi.mock('../src/utils/use-fetch', () => ({
   default: () => ({
