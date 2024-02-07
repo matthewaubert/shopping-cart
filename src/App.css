@@ -5,9 +5,121 @@
   text-align: center;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:hover {
+  cursor: pointer;
+}
+
+body {
+  height: 100vh;
+  background-color: var(--gray-100);
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  color: inherit;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: inherit;
+}
+
+h1 {
+  font-size: 1.8rem;
+}
+
 main {
   max-width: var(--max-width);
   margin: var(--margin);
   padding: 0 var(--padding-horiz);
-  min-height: calc(100vh - 70.98px - 153.25px);
+  min-height: var(--main-min-height);
+}
+
+*.visually-hidden {
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  height: 0;
+  overflow: hidden;
+  position: absolute;
+  white-space: nowrap;
+  width: 0;
+}
+
+.btn,
+.spinner button {
+  background-color: var(--gray-300);
+  border: 1px solid transparent;
+  border-radius: 6px;
+  display: grid;
+  place-content: center;
+}
+
+.btn {
+  padding: 0.6rem 0.45rem 0.8rem;
+}
+
+.spinner button {
+  padding: 0.6rem;
+}
+
+.btn:hover,
+.spinner button:hover {
+  border: 1px solid var(--gray-400);
+}
+
+.hamburger:hover,
+.cart-btn:hover {
+  transform: scale(1.08);
+}
+
+div.modal-bg {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+}
+
+.modal {
+  border: 1px solid rgba(0,0,0,0.15);
+  border-radius: 10px;
+  box-shadow: var(--shadow-2);
+  text-align: left;
+  overflow: hidden;
+  position: absolute;
+  top: 58px;
+  z-index: 2;
+}
+
+@media (max-width: 875px) {
+  nav div.product-links {
+    padding: 1rem;
+    flex-direction: column;
+    gap: 1.3rem;
+  }
+
+  nav div.product-links a {
+    width: 100%;
+  }
+}
+
+@media (max-width: 515px) {
+  div.cart-modal {
+    max-width: calc(100vw - var(--padding-horiz) * 2);
+    overflow: scroll;
+  }
+
+  div.cart-modal > div.table {
+    overflow: scroll;
+  }
+
+  footer .links {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
 }

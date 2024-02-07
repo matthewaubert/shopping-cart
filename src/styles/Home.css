@@ -1,7 +1,7 @@
 .welcome {
   text-align: left;
   max-width: min(calc(100% - 36vw), 475px);
-  min-height: calc(100vh - 68.19px - 153.25px);
+  min-height: var(--main-min-height);
 
   display: flex;
   flex-direction: column;

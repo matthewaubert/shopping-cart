@@ -7,7 +7,7 @@ div.spinner {
 
 .spinner input[type=number] {
   -webkit-appearance: none;
-  -moz-appearance: textfield;
+  -moz-appearance: textfield; /* Firefox spin button */
   appearance: none;
 
   border: none;
@@ -21,7 +21,7 @@ div.spinner {
   box-shadow: inset var(--shadow-1);
 }
 
-/* Chrome, Safari, Edge, Opera */
+/* Chrome, Safari, Edge, Opera spin button */
 .spinner input::-webkit-outer-spin-button,
 .spinner input::-webkit-inner-spin-button {
   -webkit-appearance: none;
