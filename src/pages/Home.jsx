@@ -10,7 +10,7 @@ function Home() {
         </h2>
         <a href="/shop/all-products">Shop Now</a>
       </div>
-      <div className="background"></div>
+      <div id="background"></div>
     </>
   );
 }
