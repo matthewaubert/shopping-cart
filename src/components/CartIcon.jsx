@@ -9,6 +9,7 @@ import {
 } from '../utils/util';
 import '../styles/CartIcon.css';
 
+// React component for cart icon nav element
 function CartIcon({ cart, setCart, colorScheme }) {
   const [displayModal, setDisplayModal] = useState(false);
 
@@ -49,7 +50,7 @@ CartIcon.propTypes = {
   }),
 };
 
-// return a popup modal with a line for each item in cart
+// React component for a popup modal with a line for each item in cart
 function CartModal({ cart, setCart, colorScheme, setDisplayModal }) {
   function removeFromCart(item) {
     setCart(changeCartItem({ ...item, quantity: 0 }, cart));

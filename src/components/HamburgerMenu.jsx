@@ -6,6 +6,7 @@ function HamburgerMenu({ children }) {
   const [isOpen, setIsOpen] = useState(false);
 
   function handleModalClick(e) {
+    // if use clicks a link, close modal
     if (e.target.tagName === 'A') setIsOpen(false);
   }
 

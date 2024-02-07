@@ -9,7 +9,6 @@ function App() {
   const [cart, setCart] = useState([]);
   const { name } = useParams(); // name of url endpoint
 
-  // console.log(cart);
   const colorScheme = name
     ? { accent: '#0284c7', modalBg: 'white', navBg: '#f3f4f6' } // product pages
     : { accent: '#d41f56', modalBg: '#fec3d0', navBg: '' }; // home page

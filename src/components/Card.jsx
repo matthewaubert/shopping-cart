@@ -3,6 +3,7 @@ import Rating from './Rating';
 import { formatPrice } from '../utils/util';
 import '../styles/Card.css';
 
+// React component to display each product
 function Card({ data, children }) {
   return (
     <div className="card">

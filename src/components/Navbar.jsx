@@ -30,10 +30,11 @@ function Navbar({ colorScheme, children }) {
     };
   });
 
-  // console.log(data);
-
   return (
-    <nav ref={navbarRef} style={colorScheme && { backgroundColor: colorScheme.navBg }}>
+    <nav
+      ref={navbarRef}
+      style={colorScheme && { backgroundColor: colorScheme.navBg }}
+    >
       <div className="container">
         {matchesMediaQuery && (
           <HamburgerMenu>
@@ -41,23 +42,19 @@ function Navbar({ colorScheme, children }) {
               className="product-links"
               style={colorScheme && { backgroundColor: colorScheme.modalBg }}
             >
-              <ProductLinks
-                data={data}
-                error={error}
-                loading={loading}
-                isModal={matchesMediaQuery}
-                colorScheme={colorScheme && colorScheme}
-              />
+              <ProductLinks data={data} error={error} loading={loading} />
             </div>
           </HamburgerMenu>
         )}
         <Link
           to="/"
           className="logo"
-          style={colorScheme && {
-            color: colorScheme.accent,
-            textDecorationColor: colorScheme.accent,
-          }}
+          style={
+            colorScheme && {
+              color: colorScheme.accent,
+              textDecorationColor: colorScheme.accent,
+            }
+          }
         >
           <h1>shopping app</h1>
         </Link>

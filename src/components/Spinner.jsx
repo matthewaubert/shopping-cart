@@ -2,6 +2,8 @@ import PropTypes from 'prop-types';
 import { clamp } from '../utils/util';
 import '../styles/Spinner.css';
 
+// React component for spinner
+// (i.e. input[number] w/ increment and decrement buttons)
 function Spinner({ value, setValue, name = 'number', min = null, max = null }) {
   // decrement value of spinner
   function decrement() {

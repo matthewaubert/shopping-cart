@@ -5,15 +5,16 @@ import Spinner from './Spinner';
 import { changeCartItem, findItemQty } from '../utils/util';
 import '../styles/AddToCart.css';
 
+// React component for 'add to cart' functionality
 function AddToCart({ data }) {
   const [cart, setCart] = useOutletContext();
+  // bool whether to display 'Add to Cart' button or spinner/submit
   const [hasBeenClicked, setHasBeenClicked] = useState(false);
   const qtyInCart = findItemQty(data.id, cart);
   const [qty, setQty] = useState(qtyInCart > 0 ? qtyInCart : 1);
 
   function onFormSubmit(e) {
     e.preventDefault();
-    // console.log(e.target.elements.quantity.value);
     setHasBeenClicked(() => qty > 0);
     setCart(changeCartItem({ ...data, quantity: qty }, cart));
   }
@@ -24,6 +25,7 @@ function AddToCart({ data }) {
     setCart(changeCartItem({ ...data, quantity: 0 }, cart));
   }
 
+  // qty display below form when user adds item to cart
   const qtyDisplay =
     qtyInCart > 0 ? (
       <div className="qty-display">
@@ -38,13 +40,18 @@ function AddToCart({ data }) {
   return (
     <>
       {!hasBeenClicked ? (
-        <button className="atc-form btn" onClick={() => setHasBeenClicked(true)}>Add to Cart</button>
+        <button
+          className="atc-form btn"
+          onClick={() => setHasBeenClicked(true)}
+        >
+          Add to Cart
+        </button>
       ) : (
         <form className="atc-form" onSubmit={onFormSubmit}>
           <Spinner
             value={qty}
             setValue={setQty}
-            name={'quantity'}
+            name="quantity"
             min={0}
             max={99}
           />

@@ -1,0 +1,22 @@
+.loader {
+  width: min(calc(3.8rem + 4.25vw), 6rem);
+  height: min(calc(3.8rem + 4.25vw), 6rem);
+  position: fixed;
+  left: 50vw;
+  top: 50vh;
+  transform: translate(-50%, -50%);
+  filter: drop-shadow(var(--shadow-2));
+  z-index: 2;
+}
+
+.loader > path {
+  fill: var(--accent-shop);
+  transform-origin: center;
+  animation: spinner_svv2 .75s infinite linear;
+}
+
+@keyframes spinner_svv2 {
+  100% {
+    transform: rotate(360deg);
+  }
+}

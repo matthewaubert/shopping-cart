@@ -165,4 +165,6 @@ Today I need to:
 - [x] Add favicon
 - [x] Edit and write tests for error page
 - [x] Ensure all tests still pass
-- [ ] Clean up JS and CSS
+- [x] Clean up JS and CSS
+- [ ] Reorganize pages/components
+- [ ] Check/improve accessibility
