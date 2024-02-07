@@ -5,7 +5,7 @@ import { formatPrice, roundHalf } from '../src/utils/util';
 
 it('has the correct image', () => {
   render(<Card data={data} />);
-  expect(screen.getByRole('img')).toHaveAttribute('src', data.image);
+  expect(screen.getAllByRole('img')[0]).toHaveAttribute('src', data.image);
 });
 
 it('has the correct product name', () => {

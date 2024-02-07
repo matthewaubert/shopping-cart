@@ -47,9 +47,10 @@ function Stars({ rating, accessibleRating }) {
   while (starsArr.length < 5) starsArr.push(emptyStar);
 
   return (
-    <div
+    <span
       className="stars"
       title={accessibleRating}
+      role="img"
       aria-label={accessibleRating}
     >
       {starsArr.map((star, i) => (
@@ -57,7 +58,7 @@ function Stars({ rating, accessibleRating }) {
           {star}
         </svg>
       ))}
-    </div>
+    </span>
   );
 }
 

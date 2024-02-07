@@ -167,4 +167,4 @@ Today I need to:
 - [x] Ensure all tests still pass
 - [x] Clean up JS and CSS
 - [x] Reorganize pages/components
-- [ ] Check/improve accessibility
+- [x] Check/improve accessibility

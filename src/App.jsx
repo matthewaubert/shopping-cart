@@ -10,7 +10,7 @@ function App() {
   const { name } = useParams(); // name of url endpoint
 
   const colorScheme = name
-    ? { accent: '#0284c7', modalBg: 'white', navBg: '#f3f4f6' } // product pages
+    ? { accent: '#027bb9', modalBg: 'white', navBg: '#f3f4f6' } // product pages
     : { accent: '#d41f56', modalBg: '#fec3d0', navBg: '' }; // home page
 
   return (

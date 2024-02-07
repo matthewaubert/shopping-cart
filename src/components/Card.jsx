@@ -8,9 +8,9 @@ function Card({ data, children }) {
   return (
     <div className="card">
       <img src={data.image} alt=""></img>
-      <h3 className="title" title={data.title}>
+      <h2 className="title" title={data.title}>
         {data.title}
-      </h3>
+      </h2>
       <div className="price">{formatPrice(data.price)}</div>
       <Rating rating={data.rating} />
       {children}
