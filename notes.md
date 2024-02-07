@@ -162,5 +162,5 @@ Today I need to:
 Today I need to:
 - [x] Build hamburger menu component
 - [x] Make app responsive
-- [ ] Add favicon
+- [x] Add favicon
 - [ ] Write tests for error page?
