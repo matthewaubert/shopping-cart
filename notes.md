@@ -163,4 +163,6 @@ Today I need to:
 - [x] Build hamburger menu component
 - [x] Make app responsive
 - [x] Add favicon
-- [ ] Write tests for error page?
+- [x] Edit and write tests for error page
+- [ ] Ensure all tests still pass
+- [ ] Clean up JS and CSS
