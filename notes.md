@@ -168,3 +168,8 @@ Today I need to:
 - [x] Clean up JS and CSS
 - [x] Reorganize pages/components
 - [x] Check/improve accessibility
+
+## 3/1/24
+Refactor to TypeScript!
+- [x] Start with the setup described [in this blog post](https://www.robinwieruch.de/vite-typescript/)
+- [ ] Refactor `src/main.tsx` and go from there.

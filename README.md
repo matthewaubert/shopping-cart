@@ -23,6 +23,10 @@ My app should include:
 
 Review my <a href="./notes.md">notes</a> to see my planning process.
 
+## TypeScript Refactor
+
+I later came back to this project and refactored it to TypeScript as a way to learn the language.
+
 ## Credits
 
 - Product information and images from <a href="https://fakestoreapi.com/">FakeStore API</a>
