@@ -5,11 +5,27 @@ import CartIcon from './components/CartIcon';
 import Footer from './components/Footer';
 import './App.css';
 
-function App() {
-  const [cart, setCart] = useState([]);
+interface CartItem {
+  category: string;
+  description: string;
+  id: number;
+  image: string;
+  price: number;
+  rating: { count: number; rate: number };
+  title: string;
+}
+
+interface ColorSchemeObj {
+  accent: string;
+  modalBg: string;
+  navBg: string;
+}
+
+export default function App() {
+  const [cart, setCart] = useState<CartItem[]>([]);
   const { name } = useParams(); // name of url endpoint
 
-  const colorScheme = name
+  const colorScheme: ColorSchemeObj = name
     ? { accent: '#027bb9', modalBg: 'white', navBg: '#f3f4f6' } // product pages
     : { accent: '#d41f56', modalBg: '#fec3d0', navBg: '' }; // home page
 
@@ -25,5 +41,3 @@ function App() {
     </>
   );
 }
-
-export default App;

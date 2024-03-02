@@ -3,7 +3,17 @@ import ErrorPage from './pages/ErrorPage';
 import Home from './pages/Home';
 import Shop from './pages/Shop';
 
-const routerConfig = [
+interface RouteObject {
+  path: string;
+  element: JSX.Element;
+  errorElement: JSX.Element;
+  children: {
+    path: string;
+    element: JSX.Element;
+  }[];
+}
+
+const routerConfig: RouteObject[] = [
   {
     path: '/',
     element: <App />,
