@@ -1,7 +1,7 @@
-import PropTypes from 'prop-types';
+import { ColorSchemeObj } from '../types';
 import '../styles/Footer.css';
 
-function Footer({ colorScheme }) {
+export default function Footer({ colorScheme }: { colorScheme: ColorSchemeObj }) {
   return (
     <footer style={colorScheme && { backgroundColor: colorScheme.accent }}>
       <div className="container">
@@ -44,11 +44,3 @@ function Footer({ colorScheme }) {
     </footer>
   );
 }
-
-Footer.propTypes = {
-  colorScheme: PropTypes.shape({
-    accent: PropTypes.string.isRequired,
-  }),
-};
-
-export default Footer;
