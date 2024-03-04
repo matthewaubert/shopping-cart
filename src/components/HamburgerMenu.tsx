@@ -1,13 +1,13 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import '../styles/HamburgerMenu.css';
 
-function HamburgerMenu({ children }) {
+export default function HamburgerMenu({ children }: { children: JSX.Element }) {
   const [isOpen, setIsOpen] = useState(false);
 
-  function handleModalClick(e) {
-    // if use clicks a link, close modal
-    if (e.target.tagName === 'A') setIsOpen(false);
+  function handleModalClick(e: React.MouseEvent<HTMLElement, MouseEvent>) {
+    // if user clicks a link, close modal
+    if (e.target instanceof HTMLElement && e.target.tagName === 'A')
+      setIsOpen(false);
   }
 
   return (
@@ -20,7 +20,11 @@ function HamburgerMenu({ children }) {
       </button>
       {isOpen && (
         <>
-          <div className="modal-bg" data-testid="modal-bg" onClick={() => setIsOpen(false)}></div>
+          <div
+            className="modal-bg"
+            data-testid="modal-bg"
+            onClick={() => setIsOpen(false)}
+          ></div>
           <div className="modal" data-testid="modal" onClick={handleModalClick}>
             {children}
           </div>
@@ -29,9 +33,3 @@ function HamburgerMenu({ children }) {
     </>
   );
 }
-
-HamburgerMenu.propTypes = {
-  children: PropTypes.element.isRequired,
-};
-
-export default HamburgerMenu;

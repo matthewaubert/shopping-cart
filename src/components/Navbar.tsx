@@ -1,26 +1,32 @@
 import { useEffect, useRef } from 'react';
-import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import HamburgerMenu from './HamburgerMenu';
 import useFetch from '../utils/use-fetch';
 import useMediaQuery from '../utils/use-media-query';
+import { ColorSchemeObj } from '../types';
 import '../styles/Navbar.css';
 
-function Navbar({ colorScheme, children }) {
+interface NavbarProps {
+  colorScheme?: ColorSchemeObj;
+  children?: JSX.Element;
+}
+
+export default function Navbar({ colorScheme, children }: NavbarProps) {
   // check if window matches media query
   const matchesMediaQuery = useMediaQuery('(max-width: 875px)');
   // fetch product categories from API
-  const { data, error, loading } = useFetch(
+  const { data, error, loading } = useFetch<string[]>(
     'https://fakestoreapi.com/products/categories',
   );
-  const navbarRef = useRef(null);
+  const navbarRef = useRef<HTMLElement>(null);
 
   // add shadow to navbar when user scrolls down
   useEffect(() => {
     function onScroll() {
-      window.scrollY > 0
-        ? navbarRef.current.classList.add('shadow')
-        : navbarRef.current.classList.remove('shadow');
+      if (navbarRef.current)
+        window.scrollY > 0
+          ? navbarRef.current.classList.add('shadow')
+          : navbarRef.current.classList.remove('shadow');
     }
 
     window.addEventListener('scroll', onScroll);
@@ -69,16 +75,13 @@ function Navbar({ colorScheme, children }) {
   );
 }
 
-Navbar.propTypes = {
-  colorScheme: PropTypes.shape({
-    accent: PropTypes.string.isRequired,
-    modalBg: PropTypes.string.isRequired,
-    navBg: PropTypes.string.isRequired,
-  }),
-  children: PropTypes.element,
-};
+interface ProductLinksProps {
+  data: string[] | null;
+  error: string | null;
+  loading: boolean;
+}
 
-function ProductLinks({ data, error, loading }) {
+function ProductLinks({ data, error, loading }: ProductLinksProps) {
   return (
     <>
       {error && <p className="error">{error}</p>}
@@ -96,11 +99,3 @@ function ProductLinks({ data, error, loading }) {
     </>
   );
 }
-
-ProductLinks.propTypes = {
-  data: PropTypes.array,
-  error: PropTypes.string,
-  loading: PropTypes.bool.isRequired,
-};
-
-export default Navbar;
