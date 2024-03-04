@@ -1,4 +1,3 @@
-import PropTypes from 'prop-types';
 import { useState } from 'react';
 import {
   calcCartTotal,
@@ -7,10 +6,21 @@ import {
   formatPrice,
   sortBy,
 } from '../utils/util';
+import { CartItem, ColorSchemeObj, SetCartFunc } from '../types';
 import '../styles/CartIcon.css';
 
+interface CartIconProps {
+  cart: CartItem[];
+  setCart: SetCartFunc;
+  colorScheme?: ColorSchemeObj;
+}
+
 // React component for cart icon nav element
-function CartIcon({ cart, setCart, colorScheme }) {
+export default function CartIcon({
+  cart,
+  setCart,
+  colorScheme,
+}: CartIconProps) {
   const [displayModal, setDisplayModal] = useState(false);
 
   const itemsInCart = calcQtyInCart(cart);
@@ -41,18 +51,21 @@ function CartIcon({ cart, setCart, colorScheme }) {
   );
 }
 
-CartIcon.propTypes = {
-  cart: PropTypes.array.isRequired,
-  setCart: PropTypes.func.isRequired,
-  colorScheme: PropTypes.shape({
-    accent: PropTypes.string.isRequired,
-    modalBg: PropTypes.string.isRequired,
-  }),
-};
+interface CartModalProps {
+  cart: CartItem[];
+  setCart: SetCartFunc;
+  colorScheme?: ColorSchemeObj;
+  setDisplayModal: (arg: boolean | (() => boolean)) => void;
+}
 
 // React component for a popup modal with a line for each item in cart
-function CartModal({ cart, setCart, colorScheme, setDisplayModal }) {
-  function removeFromCart(item) {
+function CartModal({
+  cart,
+  setCart,
+  colorScheme,
+  setDisplayModal,
+}: CartModalProps) {
+  function removeFromCart(item: CartItem) {
     setCart(changeCartItem({ ...item, quantity: 0 }, cart));
   }
   const closeModal = () => setDisplayModal(() => false);
@@ -79,7 +92,7 @@ function CartModal({ cart, setCart, colorScheme, setDisplayModal }) {
                   </tr>
                 </thead>
                 <tbody>
-                  {sortBy(cart, 'title').map((item) => (
+                  {sortBy(cart, 'title').map((item: CartItem) => (
                     <tr key={item.id}>
                       <th scope="row" title={item.title}>
                         {item.title}
@@ -101,7 +114,7 @@ function CartModal({ cart, setCart, colorScheme, setDisplayModal }) {
                 </tbody>
                 <tfoot>
                   <tr>
-                    <th scope="row" colSpan="3">
+                    <th scope="row" colSpan={3}>
                       Shopping Cart Total
                     </th>
                     <td>{formatPrice(calcCartTotal(cart))}</td>
@@ -125,15 +138,3 @@ function CartModal({ cart, setCart, colorScheme, setDisplayModal }) {
     </>
   );
 }
-
-CartModal.propTypes = {
-  cart: PropTypes.array.isRequired,
-  setCart: PropTypes.func.isRequired,
-  colorScheme: PropTypes.shape({
-    accent: PropTypes.string.isRequired,
-    modalBg: PropTypes.string.isRequired,
-  }),
-  setDisplayModal: PropTypes.func.isRequired,
-};
-
-export default CartIcon;
