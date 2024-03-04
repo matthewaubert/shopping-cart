@@ -9,6 +9,11 @@ export interface CartItem {
   title: string;
 }
 
+export type CartOutletContext = [
+  CartItem[],
+  React.Dispatch<React.SetStateAction<CartItem[]>>,
+];
+
 export interface ColorSchemeObj {
   accent: string;
   modalBg: string;

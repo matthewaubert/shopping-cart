@@ -1,19 +1,19 @@
 import { useState } from 'react';
-import PropTypes from 'prop-types';
 import { useOutletContext } from 'react-router-dom';
 import Spinner from './Spinner';
 import { changeCartItem, findItemQty } from '../utils/util';
+import { CartItem, CartOutletContext } from '../types';
 import '../styles/AddToCart.css';
 
 // React component for 'add to cart' functionality
-function AddToCart({ data }) {
-  const [cart, setCart] = useOutletContext();
+export default function AddToCart({ data }: { data: CartItem }) {
+  const [cart, setCart] = useOutletContext<CartOutletContext>();
   // bool whether to display 'Add to Cart' button or spinner/submit
   const [hasBeenClicked, setHasBeenClicked] = useState(false);
   const qtyInCart = findItemQty(data.id, cart);
   const [qty, setQty] = useState(qtyInCart > 0 ? qtyInCart : 1);
 
-  function onFormSubmit(e) {
+  function onFormSubmit(e: React.FormEvent<HTMLFormElement>) {
     e.preventDefault();
     setHasBeenClicked(() => qty > 0);
     setCart(changeCartItem({ ...data, quantity: qty }, cart));
@@ -62,20 +62,3 @@ function AddToCart({ data }) {
     </>
   );
 }
-
-AddToCart.propTypes = {
-  data: PropTypes.shape({
-    category: PropTypes.string.isRequired,
-    description: PropTypes.string.isRequired,
-    id: PropTypes.number.isRequired,
-    image: PropTypes.string.isRequired,
-    price: PropTypes.number.isRequired,
-    rating: PropTypes.shape({
-      count: PropTypes.number.isRequired,
-      rate: PropTypes.number.isRequired,
-    }).isRequired,
-    title: PropTypes.string.isRequired,
-  }).isRequired,
-};
-
-export default AddToCart;

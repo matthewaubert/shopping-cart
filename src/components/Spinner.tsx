@@ -1,24 +1,46 @@
-import PropTypes from 'prop-types';
 import { clamp } from '../utils/util';
 import '../styles/Spinner.css';
 
+interface SpinnerProps {
+  value: number;
+  setValue: React.Dispatch<React.SetStateAction<number>>;
+  name?: string;
+  min?: number | null;
+  max?: number | null;
+}
+
 // React component for spinner
-// (i.e. input[number] w/ increment and decrement buttons)
-function Spinner({ value, setValue, name = 'number', min = null, max = null }) {
+// (i.e. `input[number]` w/ increment and decrement buttons)
+export default function Spinner({
+  value,
+  setValue,
+  name = 'number',
+  min = null,
+  max = null,
+}: SpinnerProps) {
   // decrement value of spinner
   function decrement() {
     setValue((n) => {
-      const qty = Number(n);
-      return qty <= min ? min : qty - 1;
+      if (min === null) return n - 1;
+      const value = Number(n);
+      return value <= min ? min : value - 1;
     });
   }
 
   // increment value of spinner
   function increment() {
     setValue((n) => {
-      const qty = Number(n);
-      return qty >= max ? max : qty + 1;
+      if (max === null) return n + 1;
+      const value = Number(n);
+      return value >= max ? max : value + 1;
     });
+  }
+
+  function handleChange(e: React.ChangeEvent<HTMLInputElement>) {
+    if (min && max) setValue(clamp(Number(e.target.value), min, max));
+    else if (min) setValue(Math.max(Number(e.target.value), min));
+    else if (max) setValue(Math.min(Number(e.target.value), max));
+    else setValue(Number(e.target.value));
   }
 
   return (
@@ -36,10 +58,10 @@ function Spinner({ value, setValue, name = 'number', min = null, max = null }) {
         id="spinner-input"
         type="number"
         name={name}
-        min={min}
-        max={max}
+        min={String(min)}
+        max={String(max)}
         value={value}
-        onChange={(e) => setValue(clamp(Number(e.target.value), min, max))}
+        onChange={handleChange}
       />
       <button type="button" className="inc" onClick={increment}>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -50,13 +72,3 @@ function Spinner({ value, setValue, name = 'number', min = null, max = null }) {
     </div>
   );
 }
-
-Spinner.propTypes = {
-  value: PropTypes.number.isRequired,
-  setValue: PropTypes.func.isRequired,
-  name: PropTypes.string,
-  min: PropTypes.number,
-  max: PropTypes.number,
-};
-
-export default Spinner;
