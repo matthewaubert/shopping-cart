@@ -3,23 +3,8 @@ import { Outlet, useParams } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import CartIcon from './components/CartIcon';
 import Footer from './components/Footer';
+import { CartItem, ColorSchemeObj } from './types.ts';
 import './App.css';
-
-interface CartItem {
-  category: string;
-  description: string;
-  id: number;
-  image: string;
-  price: number;
-  rating: { count: number; rate: number };
-  title: string;
-}
-
-interface ColorSchemeObj {
-  accent: string;
-  modalBg: string;
-  navBg: string;
-}
 
 export default function App() {
   const [cart, setCart] = useState<CartItem[]>([]);
