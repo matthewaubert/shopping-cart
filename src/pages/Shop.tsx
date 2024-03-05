@@ -5,7 +5,7 @@ import AddToCart from '../components/AddToCart';
 import Loader from '../components/Loader';
 import useFetch from '../utils/use-fetch';
 import { sortBy } from '../utils/util';
-import { CartItem } from '../types';
+import { StoreItem } from '../types';
 import '../styles/Shop.css';
 
 // React component for Shop page
@@ -16,7 +16,8 @@ function Shop() {
     !name || name === 'all-products'
       ? ''
       : `/category/${name.replace('-', '%20')}`;
-  const { data, error, loading } = useFetch<CartItem[]>(
+      
+  const { data, error, loading } = useFetch<StoreItem[]>(
     `https://fakestoreapi.com/products${fetchEndpoint}`,
   );
 

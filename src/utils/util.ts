@@ -1,4 +1,4 @@
-import { CartItem } from '../types';
+import { StoreItem, CartItem } from '../types';
 
 /**
  * calc total price of items in cart
@@ -112,25 +112,25 @@ export function roundHalf(num: number): number {
 
 /**
  * sort given array by keyword
- * @param {CartItem[]} array - array of `CartItem` objs
+ * @param {StoreItem[]} array - array of `Item` objs
  * @param {string} keyword - e.g. 'title'
- * @returns {CartItem[]} sorted shallow copy of given array
+ * @returns {StoreItem[]} sorted shallow copy of given array
  */
-export function sortBy(array: CartItem[], keyword: string): CartItem[] {
+export function sortBy(array: StoreItem[], keyword: string): StoreItem[] {
   // if keyword is 'rating': sort by item.rating.rate value
   // else: sort by item[keyword] value
   const compareFn =
     keyword === 'rating'
-      ? (a: CartItem, b: CartItem) =>
+      ? (a: StoreItem, b: StoreItem) =>
           a[keyword].rate > b[keyword].rate
             ? -1
             : a[keyword].rate < b[keyword].rate
               ? 1
               : 0
-      : (a: CartItem, b: CartItem) =>
-          a[keyword as keyof CartItem] < b[keyword as keyof CartItem]
+      : (a: StoreItem, b: StoreItem) =>
+          a[keyword as keyof StoreItem] < b[keyword as keyof StoreItem]
             ? -1
-            : a[keyword as keyof CartItem] > b[keyword as keyof CartItem]
+            : a[keyword as keyof StoreItem] > b[keyword as keyof StoreItem]
               ? 1
               : 0;
 

@@ -1,10 +1,10 @@
 import Rating from './Rating';
 import { formatPrice } from '../utils/util';
-import { CartItem } from '../types';
+import { StoreItem } from '../types';
 import '../styles/Card.css';
 
 interface CardProps {
-  data: CartItem;
+  data: StoreItem;
   children?: JSX.Element;
 }
 

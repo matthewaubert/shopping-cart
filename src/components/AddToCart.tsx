@@ -2,11 +2,11 @@ import { useState } from 'react';
 import { useOutletContext } from 'react-router-dom';
 import Spinner from './Spinner';
 import { changeCartItem, findItemQty } from '../utils/util';
-import { CartItem, CartOutletContext } from '../types';
+import { StoreItem, CartOutletContext } from '../types';
 import '../styles/AddToCart.css';
 
 // React component for 'add to cart' functionality
-export default function AddToCart({ data }: { data: CartItem }) {
+export default function AddToCart({ data }: { data: StoreItem }) {
   const [cart, setCart] = useOutletContext<CartOutletContext>();
   // bool whether to display 'Add to Cart' button or spinner/submit
   const [hasBeenClicked, setHasBeenClicked] = useState(false);

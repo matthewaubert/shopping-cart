@@ -6,12 +6,12 @@ import {
   formatPrice,
   sortBy,
 } from '../utils/util';
-import { CartItem, ColorSchemeObj, SetCartFunc } from '../types';
+import { CartItem, ColorSchemeObj, SetCartFn } from '../types';
 import '../styles/CartIcon.css';
 
 interface CartIconProps {
   cart: CartItem[];
-  setCart: SetCartFunc;
+  setCart: SetCartFn;
   colorScheme?: ColorSchemeObj;
 }
 
@@ -53,7 +53,7 @@ export default function CartIcon({
 
 interface CartModalProps {
   cart: CartItem[];
-  setCart: SetCartFunc;
+  setCart: SetCartFn;
   colorScheme?: ColorSchemeObj;
   setDisplayModal: (arg: boolean | (() => boolean)) => void;
 }
@@ -92,7 +92,7 @@ function CartModal({
                   </tr>
                 </thead>
                 <tbody>
-                  {sortBy(cart, 'title').map((item: CartItem) => (
+                  {(sortBy(cart, 'title') as CartItem[]).map((item: CartItem) => (
                     <tr key={item.id}>
                       <th scope="row" title={item.title}>
                         {item.title}
