@@ -79,7 +79,7 @@ function isErrorWithMessage(error: unknown): boolean {
   return (
     typeof error === 'object' &&
     error !== null &&
-    Object.hasOwn(error, 'message') &&
+    'message' in error &&
     typeof (error as Record<string, unknown>).message === 'string'
   );
 }
