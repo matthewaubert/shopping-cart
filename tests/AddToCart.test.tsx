@@ -3,10 +3,11 @@ import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import AddToCart from '../src/components/AddToCart';
 import { data } from './example-data';
+import { CartItem } from '../src/types';
 
 // mock useState
-let cart = [];
-function setCart(newCart) {
+let cart: CartItem[] = [];
+function setCart(newCart: CartItem[]) {
   cart = newCart;
 }
 
