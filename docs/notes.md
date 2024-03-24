@@ -3,7 +3,6 @@
 Notes and progress for my Shopping Cart app
 
 ## Assignment
-> Ref: https://www.theodinproject.com/lessons/node-path-react-new-shopping-cart
 
 1. Create a new React project.
 
